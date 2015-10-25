@@ -21,3 +21,9 @@ npm run start
 ```
 npm run test
 ```
+
+### Lint
+```
+npm install -g eslint
+npm run lint
+```

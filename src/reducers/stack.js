@@ -1,6 +1,6 @@
 import {Map, List} from 'immutable';
 
-import * as types from '../constants/ActionTypes'
+import * as types from '../constants/ActionTypes';
 
 const initialState = Map({
   lists: List.of()
@@ -24,12 +24,12 @@ function pop(state) {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case types.SET_STATE:
-      return setState(state, action.state);
-    case types.PUSH:
-      return push(state, action.text);
-    case types.POP:
-      return pop(state);
+  case types.SET_STATE:
+    return setState(state, action.state);
+  case types.PUSH:
+    return push(state, action.text);
+  case types.POP:
+    return pop(state);
   }
   return state;
 }

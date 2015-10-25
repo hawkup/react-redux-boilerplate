@@ -28,6 +28,6 @@ export default class Stack extends React.Component {
           Pop
         </button>
       </div>
-    )
+    );
   }
 }
