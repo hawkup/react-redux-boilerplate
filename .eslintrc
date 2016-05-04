@@ -1,38 +1,8 @@
 {
-    "rules": {
-        "indent": [
-            2,
-            2
-        ],
-        "quotes": [
-            2,
-            "single"
-        ],
-        "linebreak-style": [
-            2,
-            "unix"
-        ],
-        "semi": [
-            2,
-            "always"
-        ],
-        "react/jsx-uses-react": 1
-    },
-    "env": {
-        "es6": true,
-        "browser": true
-    },
-    "extends": "eslint:recommended",
+  "extends": "airbnb",
+  "parserOptions": {
     "ecmaFeatures": {
-        "jsx": true,
-        "experimentalObjectRestSpread": true,
-        "modules": true
-    },
-    "plugins": [
-        "react"
-    ],
-    "globals" : {
-        "global": true,
-        "__DEV__": true
+      "experimentalObjectRestSpread": true
     }
+  }
 }

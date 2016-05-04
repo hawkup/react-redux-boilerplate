@@ -1,37 +1,27 @@
-var webpack = require('webpack');
-
-var devFlagPlugin = new webpack.DefinePlugin({  
-  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
-});
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
+  devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './src/index.jsx'
+    './src/index',
   ],
-  module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'react-hot!babel'
-    }]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
   output: {
-    path: __dirname + '/dist',
-    publishPath: '/',
-    filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-    historyApiFallback: true
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    devFlagPlugin
-  ]
+  ],
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loaders: ['babel'],
+      include: path.join(__dirname, 'src'),
+    }],
+  },
 };
