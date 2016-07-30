@@ -18,9 +18,9 @@ ReactDOM.render(
 );
 
 if (module.hot) {
-  // eslint-disable-next-line no-shadow, global-require
-  const Root = require('./components/Root').default;
   module.hot.accept('./components/Root', () => {
+    // eslint-disable-next-line no-shadow, global-require
+    const Root = require('./components/Root').default;
     ReactDOM.render(
       <AppContainer>
         <Root store={store} history={history} />
